@@ -61,6 +61,7 @@ extern DMA_HandleTypeDef hdma_hrtim1_a;
 extern DMA_HandleTypeDef hdma_hrtim1_b;
 extern DMA_HandleTypeDef hdma_hrtim1_e;
 extern DMA_HandleTypeDef hdma_hrtim1_f;
+extern HRTIM_HandleTypeDef hhrtim1;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -299,6 +300,20 @@ void EXTI15_10_IRQHandler(void)
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
 
   /* USER CODE END EXTI15_10_IRQn 1 */
+}
+
+/**
+  * @brief This function handles HRTIM master timer global interrupt.
+  */
+void HRTIM1_Master_IRQHandler(void)
+{
+  /* USER CODE BEGIN HRTIM1_Master_IRQn 0 */
+
+  /* USER CODE END HRTIM1_Master_IRQn 0 */
+  HAL_HRTIM_IRQHandler(&hhrtim1,HRTIM_TIMERINDEX_MASTER);
+  /* USER CODE BEGIN HRTIM1_Master_IRQn 1 */
+
+  /* USER CODE END HRTIM1_Master_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
